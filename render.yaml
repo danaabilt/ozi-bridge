@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: ozi-bridge
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python ozibridge.py
+    envVars:
+      - key: BRIDGE_TOKEN
+        sync: false
+      - key: ADMIN_IDS
+        sync: false
+      - key: SHEET_ID
+        sync: false
+      - key: GOOGLE_CREDENTIALS
+        sync: false
